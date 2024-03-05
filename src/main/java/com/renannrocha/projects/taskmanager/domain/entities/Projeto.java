@@ -1,5 +1,6 @@
 package com.renannrocha.projects.taskmanager.domain.entities;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;

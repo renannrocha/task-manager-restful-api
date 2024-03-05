@@ -1,6 +1,7 @@
 package com.renannrocha.projects.taskmanager.domain.entities;
 
 import com.renannrocha.projects.taskmanager.domain.entities.enums.TaskStatus;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.stereotype.Controller;
 
