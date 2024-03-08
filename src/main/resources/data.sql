@@ -1,0 +1,24 @@
+CREATE TABLE USUARIO (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    email VARCHAR(100),
+    senha VARCHAR(100)
+);
+
+CREATE TABLE TAREFA (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(50),
+    descricao VARCHAR(100),
+    status VARCHAR(50),
+    data_criacao TIMESTAMP,
+    data_conclusao TIMESTAMP,
+    usuario_id INTEGER REFERENCES USUARIO (id)
+);
+
+CREATE TABLE PROJETO (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    descricao VARCHAR(100),
+    usuario_id INTEGER REFERENCES USUARIO (id),
+    tarefa_id INTEGER REFERENCES TAREFA (id)
+);
