@@ -19,6 +19,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     private static String DELETE = "delete from USUARIO where id = ? ";
     private static String UPDATE = "update USUARIO set nome = ? , email = ?, senha = ? where id = ? ";
     private static String SELECT_BY_ID = "select * from USUARIO where id = ? ";
+    private static String EXISTS = "select count(*) from USUARIO where id = ? ";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -81,5 +82,11 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
                 return usuario;
             }
         });
+    }
+
+    // Se o número de registros for maior que zero, o método retorna true, indicando que um usuário com esse id existe. Caso contrário, retorna false.
+    public boolean existsById(Integer id) {
+        Integer count = jdbcTemplate.queryForObject(EXISTS, new Object[]{id}, Integer.class);
+        return count != null && count > 0;
     }
 }
