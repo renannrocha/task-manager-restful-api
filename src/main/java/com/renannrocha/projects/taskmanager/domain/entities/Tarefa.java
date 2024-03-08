@@ -1,12 +1,10 @@
 package com.renannrocha.projects.taskmanager.domain.entities;
 
 import com.renannrocha.projects.taskmanager.domain.entities.enums.TaskStatus;
-import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.stereotype.Controller;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,7 +19,7 @@ public class Tarefa implements Serializable {
     private String titulo;
     private String descricao;
     private TaskStatus status;
-    private LocalDate dataCriacao;
-    private LocalDate dataConclusao;
+    private Date dataCriacao;
+    private Date dataConclusao;
     private Usuario usuario;
 }
