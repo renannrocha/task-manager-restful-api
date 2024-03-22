@@ -1,21 +1,10 @@
 package com.renannrocha.projects.taskmanager.domain.repositories;
 
 import com.renannrocha.projects.taskmanager.domain.entities.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface UsuarioRepository {
-
-    public Usuario save(Usuario usuario);
-
-    public Usuario update(Usuario usuario);
-
-    public void delete(Usuario usuario);
-
-    public void deleteById(Integer id);
-
-    public List<Usuario> list();
-
-    public Usuario findUsuarioById(Integer id);
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 }

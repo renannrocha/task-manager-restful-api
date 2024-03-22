@@ -1,20 +1,10 @@
 package com.renannrocha.projects.taskmanager.domain.repositories;
 
 import com.renannrocha.projects.taskmanager.domain.entities.Tarefa;
-import com.renannrocha.projects.taskmanager.domain.entities.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
+@Repository
+public interface TarefaRepository extends JpaRepository<Tarefa, Integer> {
 
-public interface TarefaRepository {
-    public Tarefa save(Tarefa tarefa);
-
-    public Tarefa update(Tarefa tarefa);
-
-    public void delete(Tarefa tarefa);
-
-    public void deleteById(Integer id);
-
-    public List<Tarefa> list();
-
-    public Tarefa findTarefaById(Integer id);
 }
